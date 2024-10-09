@@ -97,6 +97,7 @@ const emits = defineEmits(['closeMenu']);
 	justify-content: space-between;
 	padding: 3vh 4.5rem;
 	transition: transform $duration, opacity $duration, visibility $duration;
+	z-index: 100;
 	&.hidden {
 		transform: translateX(-100%);
 		// opacity: 0;
