@@ -52,9 +52,9 @@ const emits = defineEmits(['openMenu']);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 1.3rem 3.5rem;
+	padding: 1.3rem 0;
 	@media only screen and (max-width: 1000px) {
-		padding: 1.3rem 10px;
+		padding: 1.3rem 0;
 		& > *:not(.header__logo):not(.header__menu-small_btn) {
 			display: none !important;
 		}

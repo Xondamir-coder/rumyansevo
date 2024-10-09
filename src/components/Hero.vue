@@ -26,12 +26,12 @@ import ArrowDown from './Icons/ArrowDown.vue';
 
 <style lang="scss" scoped>
 .hero {
-	padding: 2rem 4rem;
+	margin-top: 2rem;
+	padding: 0 0.5rem;
 	position: relative;
-	overflow-x: clip;
 	@media only screen and (max-width: 768px) {
-		padding: 2rem 0;
 		margin-top: 4rem;
+		padding: 0;
 	}
 	&__arrows {
 		display: flex;
@@ -66,11 +66,12 @@ import ArrowDown from './Icons/ArrowDown.vue';
 			}
 		}
 		&--2 {
-			top: 55%;
-			right: -10%;
-			width: min(50vw, 556px);
-			height: min(50vw, 556px);
+			top: 63%;
+			right: -18%;
+			width: min(50vw, 500px);
+			height: min(50vw, 500px);
 			filter: blur(5px);
+			transform: rotate(5deg);
 			z-index: 10;
 			@media only screen and (max-width: 768px) {
 				z-index: -1;
@@ -81,7 +82,6 @@ import ArrowDown from './Icons/ArrowDown.vue';
 		font-weight: 400;
 		text-align: center;
 		font-size: clamp(56px, 8.5vw, 150px);
-		letter-spacing: -3px;
 		line-height: 0.9;
 	}
 }
