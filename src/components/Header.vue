@@ -1,5 +1,5 @@
 <template>
-	<header class="header">
+	<header class="header" id="header">
 		<RouterLink to="/" class="header__logo">
 			<Logo />
 		</RouterLink>
@@ -52,9 +52,8 @@ const emits = defineEmits(['openMenu']);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 1.3rem 0;
+	padding: 1.3rem 4vw !important;
 	@media only screen and (max-width: 1000px) {
-		padding: 1.3rem 0;
 		& > *:not(.header__logo):not(.header__menu-small_btn) {
 			display: none !important;
 		}

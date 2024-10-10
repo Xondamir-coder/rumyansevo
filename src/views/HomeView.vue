@@ -4,10 +4,12 @@
 		<Menu @close-menu="toggleMenu" :class="{ hidden: !isMenuOpen }" />
 		<Hero />
 		<About />
+		<CircleCarousel />
 	</main>
 </template>
 
 <script setup>
+import CircleCarousel from '@/components/CircleCarousel.vue';
 import Header from '@/components/Header.vue';
 import Hero from '@/components/Hero.vue';
 import About from '@/components/Home/About.vue';
@@ -20,7 +22,9 @@ const toggleMenu = () => (isMenuOpen.value = !isMenuOpen.value);
 
 <style lang="scss" scoped>
 .main {
-	padding: 0 4vw;
 	overflow: hidden;
+	& > *:not(#carousel) {
+		padding: 0 4vw;
+	}
 }
 </style>

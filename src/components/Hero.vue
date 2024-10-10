@@ -10,10 +10,14 @@
 			<ArrowDown />
 		</div>
 		<img
+			width="576"
+			height="529"
 			src="@/assets/images/bullet-1.webp"
 			alt="bullet"
 			class="hero__bullet hero__bullet--1" />
 		<img
+			width="1087"
+			height="1087"
 			src="@/assets/images/bullet-2.webp"
 			alt="bullet"
 			class="hero__bullet hero__bullet--2" />
@@ -81,7 +85,7 @@ import ArrowDown from './Icons/ArrowDown.vue';
 	&__text {
 		font-weight: 400;
 		text-align: center;
-		font-size: clamp(56px, 8.5vw, 150px);
+		font-size: clamp(56px, 9vw, 150px);
 		line-height: 0.9;
 	}
 }

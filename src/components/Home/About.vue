@@ -32,7 +32,6 @@ import More from '../Icons/More.vue';
 		gap: 32px;
 	}
 	&__button {
-		margin-bottom: 3rem;
 		display: flex;
 		align-items: center;
 		gap: 12px;
