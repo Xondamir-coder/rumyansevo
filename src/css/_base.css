@@ -83,7 +83,9 @@ html.lenis,
 html.lenis body {
 	height: auto;
 }
-
+.grey {
+	color: var(--grey);
+}
 .lenis.lenis-smooth {
 	scroll-behavior: auto !important;
 }

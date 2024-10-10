@@ -1,52 +1,19 @@
 <template>
 	<section class="about">
-		<h2 class="about__title">О нас</h2>
-		<div class="about__box">
-			<p class="about__text">
-				Место, где современные стрелковые дисциплины
-				<span class="grey">сочетаются с комфортом и уютом</span>
-			</p>
-			<RouterLink to="/about">
-				<MoreButton />
-			</RouterLink>
-		</div>
+		<SectionContent
+			title="О нас"
+			text-white="Место, где современные стрелковые дисциплины"
+			text-gray="сочетаются с комфортом и уютом"
+			link="/about" />
 	</section>
 </template>
 
 <script setup>
-import MoreButton from '../MoreButton.vue';
+import SectionContent from '../SectionContent.vue';
 </script>
 
 <style lang="scss" scoped>
 .about {
 	margin-top: 6rem;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	row-gap: 32px;
-	column-gap: 16px;
-	&__box {
-		display: flex;
-		flex-direction: column;
-		align-items: start;
-		gap: 32px;
-	}
-
-	&__title {
-		font-size: 1.6rem;
-		font-weight: 500;
-	}
-	&__text {
-		font-size: clamp(30px, 4vw, 70px);
-		font-weight: 500;
-		max-width: 15ch;
-		line-height: 1;
-		@media only screen and (max-width: 768px) {
-			line-height: 1.1;
-		}
-	}
-}
-.grey {
-	color: var(--grey);
 }
 </style>

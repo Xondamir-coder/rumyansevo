@@ -1,5 +1,5 @@
 <template>
-	<button class="button" @click="emitClick">
+	<button class="button">
 		<span class="button__text">{{ text }}</span>
 		<Plus />
 	</button>
@@ -11,12 +11,6 @@ import Plus from './Icons/Plus.vue';
 const props = defineProps({
 	text: String
 });
-
-const emits = defineEmits(['click']);
-
-const emitClick = () => {
-	emits('click');
-};
 </script>
 
 <style lang="scss" scoped>

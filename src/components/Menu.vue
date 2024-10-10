@@ -20,10 +20,7 @@
 		</ul>
 		<div class="menu__bottom">
 			<p class="menu__bottom-text">{{ new Date().getFullYear() }} все права защищены</p>
-			<p class="menu__bottom-text">
-				Дизайн — Karanikola, Разработка
-				<a href="https://spacelabs.uz" target="_blank">Spacelabs</a>
-			</p>
+			<p class="menu__bottom-text">Дизайн и разработка — Karanikola</p>
 		</div>
 		<MenuThingy class="menu__thingy" />
 	</div>

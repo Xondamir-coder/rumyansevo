@@ -1,31 +1,33 @@
 <template>
 	<section class="arsenal" id="arsenal">
-		<div class="arsenal__top">
-			<h2 class="arsenal__title">Наш арсенал</h2>
-			<div class="arsenal__box">
-				<p class="arsenal__text">
-					У нас есть огромный выбор оружия. Независимо от вашего опыта и предпочтений,
-					<span class="grey">у нас есть что-то для каждого любителя стрельбы.</span>
-				</p>
-			</div>
-		</div>
+		<SectionContent
+			class="arsenal__padding"
+			title="Наш арсенал"
+			text-white="У нас есть огромный выбор оружия. Независимо от вашего опыта и предпочтений,"
+			text-gray="у нас есть что-то для каждого любителя стрельбы." />
 		<swiper-container
+			ref="mySwiper"
 			class="arsenal__list"
 			grab-cursor="true"
 			centered-slides="true"
 			slides-per-view="3"
-			navigation="true"
+			:navigation="{
+				prevEl: '#arsenal-prev',
+				nextEl: '#arsenal-next'
+			}"
 			:breakpoints="{
 				300: {
-					slidesPerView: 1
+					slidesPerView: 1.15,
+					centeredSlides: false
 				},
 				768: {
-					slidesPerView: 2
+					slidesPerView: 1
 				},
 				1024: {
 					slidesPerView: 3
 				}
-			}">
+			}"
+			@swiperactiveindexchange="onActiveIndexChange">
 			<swiper-slide class="arsenal__item" v-for="item in items" :key="item.title">
 				<img
 					class="arsenal__item-bg"
@@ -51,9 +53,13 @@
 			</swiper-slide>
 		</swiper-container>
 		<div class="arsenal__nav">
-			<SliderButton id="arsenal__nav-prev" />
-			<span>[01<span class="grey">/12</span>]</span>
-			<SliderButton id="arsenal__nav-next" is-right />
+			<SliderButton id="arsenal-prev" />
+			<span
+				>[{{ curSlide.toString().padStart(2, '0')
+				}}<span class="grey">/{{ items.length }}</span
+				>]</span
+			>
+			<SliderButton id="arsenal-next" is-right />
 		</div>
 	</section>
 </template>
@@ -62,7 +68,11 @@
 import img1 from '@/assets/images/arsenal-1.webp';
 import img2 from '@/assets/images/arsenal-2.webp';
 import SliderButton from '../SliderButton.vue';
+import SectionContent from '../SectionContent.vue';
+import { ref } from 'vue';
 
+const mySwiper = ref();
+const curSlide = ref(1);
 const items = [
 	{
 		type: 'pistol',
@@ -101,6 +111,10 @@ const items = [
 		desc: 'пистолет Python, позиционируемый как охотничье оружие, спортивное оружие и оружие для самозащиты'
 	}
 ];
+
+const onActiveIndexChange = () => {
+	curSlide.value = mySwiper.value?.swiper.activeIndex + 1;
+};
 
 const getTypeName = type => {
 	switch (type) {
@@ -145,8 +159,10 @@ const getTypeName = type => {
 	display: flex;
 	flex-direction: column;
 	gap: 3rem;
-	margin-bottom: 56px;
 
+	&__padding {
+		padding: 0 4vw;
+	}
 	&__nav {
 		align-self: center;
 		display: flex;
@@ -212,36 +228,5 @@ const getTypeName = type => {
 			transition: opacity 0.7s, filter 0.7s, transform 0.7s;
 		}
 	}
-	&__top {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		row-gap: 32px;
-		column-gap: 16px;
-		padding: 0 4vw;
-	}
-	&__box {
-		display: flex;
-		flex-direction: column;
-		align-items: start;
-		gap: 32px;
-	}
-
-	&__title {
-		font-size: 1.6rem;
-		font-weight: 500;
-	}
-	&__text {
-		font-size: clamp(30px, 4vw, 70px);
-		font-weight: 500;
-		max-width: 15ch;
-		line-height: 1;
-		@media only screen and (max-width: 768px) {
-			line-height: 1.1;
-		}
-	}
-}
-.grey {
-	color: var(--grey);
 }
 </style>

@@ -8,6 +8,7 @@
 		<VideoSlider />
 		<Program />
 		<Arsenal />
+		<Trainer />
 	</main>
 </template>
 
@@ -18,6 +19,7 @@ import Hero from '@/components/Hero.vue';
 import About from '@/components/Home/About.vue';
 import Arsenal from '@/components/Home/Arsenal.vue';
 import Program from '@/components/Home/Program.vue';
+import Trainer from '@/components/Home/Trainer.vue';
 import VideoSlider from '@/components/Home/VideoSlider.vue';
 import Menu from '@/components/Menu.vue';
 import { ref } from 'vue';
