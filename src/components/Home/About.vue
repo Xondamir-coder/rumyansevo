@@ -6,16 +6,15 @@
 				Место, где современные стрелковые дисциплины
 				<span class="grey">сочетаются с комфортом и уютом</span>
 			</p>
-			<button class="about__button">
-				<span>Подробнее</span>
-				<More class="about__button-icon" />
-			</button>
+			<RouterLink to="/about">
+				<MoreButton />
+			</RouterLink>
 		</div>
 	</section>
 </template>
 
 <script setup>
-import More from '../Icons/More.vue';
+import MoreButton from '../MoreButton.vue';
 </script>
 
 <style lang="scss" scoped>
@@ -31,26 +30,7 @@ import More from '../Icons/More.vue';
 		flex-direction: column;
 		gap: 32px;
 	}
-	&__button {
-		display: flex;
-		align-items: center;
-		gap: 12px;
-		padding: 0.8rem 1.2rem;
-		font-size: 0.8rem;
-		align-self: flex-start;
-		transition: border-color 0.3s, color 0.3s;
-		border: 1px solid var(--grey);
-		&:hover {
-			border-color: var(--yellow);
-			color: var(--yellow);
-		}
-		&:hover &-icon {
-			transform: translate(5px, -5px);
-		}
-		&-icon {
-			transition: transform 0.3s;
-		}
-	}
+
 	&__title {
 		font-size: 1.6rem;
 		font-weight: 500;

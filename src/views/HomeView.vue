@@ -5,6 +5,8 @@
 		<Hero />
 		<About />
 		<CircleCarousel />
+		<VideoSlider />
+		<Program />
 	</main>
 </template>
 
@@ -13,6 +15,8 @@ import CircleCarousel from '@/components/CircleCarousel.vue';
 import Header from '@/components/Header.vue';
 import Hero from '@/components/Hero.vue';
 import About from '@/components/Home/About.vue';
+import Program from '@/components/Home/Program.vue';
+import VideoSlider from '@/components/Home/VideoSlider.vue';
 import Menu from '@/components/Menu.vue';
 import { ref } from 'vue';
 
@@ -23,7 +27,7 @@ const toggleMenu = () => (isMenuOpen.value = !isMenuOpen.value);
 <style lang="scss" scoped>
 .main {
 	overflow: hidden;
-	& > *:not(#carousel) {
+	& > *:not(#carousel):not(#video-slider) {
 		padding: 0 4vw;
 	}
 }
