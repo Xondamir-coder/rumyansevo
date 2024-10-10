@@ -1,5 +1,5 @@
 <template>
-	<div class="menu">
+	<div class="menu" id="menu">
 		<MenuThingy class="menu__thingy" />
 		<div class="menu__top">
 			<ul class="social">

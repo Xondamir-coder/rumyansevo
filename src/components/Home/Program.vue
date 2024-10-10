@@ -52,7 +52,7 @@ const content = [
 
 <style lang="scss" scoped>
 .program {
-	margin-top: 10rem;
+	margin-top: 15vw;
 	display: flex;
 	flex-direction: column;
 	gap: 2.56rem;

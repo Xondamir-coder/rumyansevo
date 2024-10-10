@@ -87,7 +87,7 @@ onMounted(() => {
 .carousel {
 	display: flex;
 	flex-direction: column;
-	margin-top: 140px;
+	margin-top: 7rem;
 
 	&__image {
 		width: 100%;
@@ -121,7 +121,7 @@ onMounted(() => {
 	}
 	&__bottom {
 		align-self: center;
-		height: 200px;
+		height: 15vw;
 		width: 1px;
 		background-color: var(--grey);
 	}

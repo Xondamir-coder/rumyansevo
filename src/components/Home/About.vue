@@ -19,7 +19,7 @@ import MoreButton from '../MoreButton.vue';
 
 <style lang="scss" scoped>
 .about {
-	margin-top: 120px;
+	margin-top: 6rem;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -28,6 +28,7 @@ import MoreButton from '../MoreButton.vue';
 	&__box {
 		display: flex;
 		flex-direction: column;
+		align-items: start;
 		gap: 32px;
 	}
 
@@ -36,7 +37,7 @@ import MoreButton from '../MoreButton.vue';
 		font-weight: 500;
 	}
 	&__text {
-		font-size: clamp(30px, 4.5vw, 70px);
+		font-size: clamp(30px, 4vw, 70px);
 		font-weight: 500;
 		max-width: 15ch;
 		line-height: 1;

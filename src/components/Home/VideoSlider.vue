@@ -27,14 +27,8 @@
 					</p>
 				</div>
 				<div class="slider__right">
-					<button class="slider__button">
-						<ArrowLeft class="slider__button-icon" />
-						<Borders />
-					</button>
-					<button class="slider__button slider__button--right">
-						<ArrowLeft class="slider__button-icon" />
-						<Borders />
-					</button>
+					<SliderButton />
+					<SliderButton is-right />
 				</div>
 			</div>
 			<ul class="slider__bottom">
@@ -53,6 +47,7 @@ import { ref } from 'vue';
 import ArrowLeft from '../Icons/ArrowLeft.vue';
 import Play from '../Icons/Play.vue';
 import Borders from '../Borders.vue';
+import SliderButton from '../SliderButton.vue';
 
 const curSlideIndex = ref(0);
 const sliderLabels = [
@@ -68,9 +63,13 @@ const sliderLabels = [
 <style lang="scss" scoped>
 .slider {
 	position: relative;
-	min-height: 100vh;
+	min-height: 100vmin;
 	display: grid;
 	align-items: end;
+
+	@media screen and (max-width: 768px) {
+		min-height: 130vmin;
+	}
 
 	&__item {
 		font-size: 0.85rem;
@@ -177,35 +176,6 @@ const sliderLabels = [
 		padding: 0 4vw;
 		@media only screen and (max-width: 768px) {
 			padding-bottom: 16px;
-		}
-	}
-	&__button {
-		display: grid;
-		place-content: center;
-		width: 2.8rem;
-		height: 2.8rem;
-		background: #ffffff14;
-		backdrop-filter: blur(24px);
-		position: relative;
-		&--right &-icon {
-			transform: rotate(180deg);
-		}
-		svg {
-			width: 1.2rem;
-			height: 1.2rem;
-		}
-		&-icon > * {
-			transition: color 0.3s, transform 0.3s;
-		}
-		// &:hover &-border {
-		// 	border-color: var(--yellow);
-		// }
-		&:hover &-icon > * {
-			color: var(--yellow);
-		}
-		&--right:hover &-icon > *,
-		&:hover &-icon > * {
-			transform: translateX(-3px);
 		}
 	}
 }
