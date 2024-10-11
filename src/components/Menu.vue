@@ -14,7 +14,8 @@
 			</button>
 		</div>
 		<ul class="menu__links">
-			<li class="menu__item" v-for="link in routingLinks" :key="link.to">
+			<li class="menu__item" v-for="(link, i) in routingLinks" :key="link.to">
+				<Borders v-if="i == 0" class="menu__borders" />
 				<RouterLink :to="link.to" class="menu__link">{{ link.text }}</RouterLink>
 			</li>
 		</ul>
@@ -32,6 +33,7 @@ import Instagram from './Icons/Instagram.vue';
 import Close from './Icons/Close.vue';
 import Youtube from './Icons/Youtube.vue';
 import MenuThingy from './MenuThingy.vue';
+import Borders from './Borders.vue';
 
 const socialLinks = [
 	{
@@ -114,10 +116,9 @@ const emits = defineEmits(['closeMenu']);
 		align-items: center;
 		flex-direction: column;
 		text-align: center;
-		gap: 3vh;
 	}
 	&__link {
-		font-size: 3.5rem;
+		font-size: min(7vw, 48px);
 		line-height: 1;
 		transition: color 0.3s;
 		position: relative;
@@ -138,6 +139,13 @@ const emits = defineEmits(['closeMenu']);
 			transform-origin: left;
 			transform: scaleX(1);
 		}
+	}
+	&__borders {
+		--border-color: #404040;
+	}
+	&__item {
+		position: relative;
+		padding: 12px;
 	}
 	&__thingy {
 		height: 100%;

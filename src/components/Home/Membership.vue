@@ -182,7 +182,7 @@ const submitForm = () => {
 		justify-content: space-between;
 		@media only screen and (max-width: 900px) {
 			transform: translate(0, 30%);
-			width: 7rem;
+			width: 9rem;
 			height: 9rem;
 		}
 		&-icon {
@@ -242,10 +242,11 @@ const submitForm = () => {
 			}
 		}
 		&-title {
-			font-size: 1.6rem;
+			font-size: max(4vw, 16px);
 			font-weight: 500;
 		}
 		&-name {
+			font-size: max(3vw, 12px);
 			font-weight: 500;
 		}
 		&-bg {

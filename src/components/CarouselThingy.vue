@@ -1,5 +1,37 @@
 <template>
-	<svg viewBox="0 0 585 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<svg v-if="!isBig" viewBox="0 0 52 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<line
+			y1="-0.5"
+			x2="52"
+			y2="-0.5"
+			transform="matrix(-1 8.74228e-08 8.74228e-08 1 52 20)"
+			stroke="#404040" />
+		<line
+			y1="-0.5"
+			x2="41"
+			y2="-0.5"
+			transform="matrix(4.3711e-08 1 1 -4.3711e-08 32 0)"
+			stroke="#404040" />
+		<line
+			y1="-0.5"
+			x2="21"
+			y2="-0.5"
+			transform="matrix(4.3711e-08 1 1 -4.3711e-08 22 10)"
+			stroke="#404040" />
+		<line
+			y1="-0.5"
+			x2="21"
+			y2="-0.5"
+			transform="matrix(4.3711e-08 1 1 -4.3711e-08 12 10)"
+			stroke="#404040" />
+		<line
+			y1="-0.5"
+			x2="21"
+			y2="-0.5"
+			transform="matrix(4.3711e-08 1 1 -4.3711e-08 2 10)"
+			stroke="#404040" />
+	</svg>
+	<svg v-else viewBox="0 0 585 61" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<line y1="30.5" x2="585" y2="30.5" stroke="#404040" />
 		<line x1="71" y1="4.3711e-08" x2="71" y2="61" stroke="#404040" stroke-width="2" />
 		<line x1="91" y1="15" x2="91" y2="46" stroke="#404040" stroke-width="2" />
@@ -23,3 +55,7 @@
 		<line x1="451" y1="15" x2="451" y2="46" stroke="#404040" stroke-width="2" />
 	</svg>
 </template>
+
+<script setup>
+const isBig = window.innerWidth > 768;
+</script>

@@ -57,7 +57,6 @@
 					<p class="carousel__text">Метательных машинок</p>
 				</div>
 			</div>
-
 			<CarouselThingy class="carousel__thingy" />
 		</div>
 		<div class="carousel__bottom"></div>
@@ -105,8 +104,8 @@ onMounted(() => {
 				width: 100%;
 				height: 100%;
 				border-radius: 50%;
-				box-shadow: 0px 4px 150px 50px #000000 inset;
-				background: #00000072;
+				box-shadow: 0px 4px 150px 10px #000000 inset;
+				background: rgba(0, 0, 0, 0.5);
 			}
 		}
 	}
@@ -130,6 +129,7 @@ onMounted(() => {
 		font-weight: 500;
 		text-align: center;
 		max-width: 10ch;
+		line-height: 1;
 	}
 	&__title {
 		background-image: var(--text-gradient);

@@ -7,11 +7,13 @@
 			</RouterLink>
 		</div>
 		<Cards :cards="content" />
+		<RouterLink to="/program" class="program__btn">
+			<MoreButton text="Все программы" />
+		</RouterLink>
 	</section>
 </template>
 
 <script setup>
-import Card from '../Card.vue';
 import MoreButton from '../MoreButton.vue';
 import img1 from '@/assets/images/program-1.webp';
 import img2 from '@/assets/images/program-2.webp';
@@ -56,6 +58,18 @@ const content = [
 	display: flex;
 	flex-direction: column;
 	gap: 2.56rem;
+	&__btn {
+		display: flex;
+		justify-content: stretch;
+		@media only screen and (min-width: 768px) {
+			display: none;
+		}
+
+		button {
+			width: 100%;
+			justify-content: center;
+		}
+	}
 	&__link {
 		@media only screen and (max-width: 768px) {
 			display: none;

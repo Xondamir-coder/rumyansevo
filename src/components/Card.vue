@@ -48,26 +48,31 @@ const props = defineProps({
 	flex-direction: column;
 	gap: 2.4rem;
 	align-items: center;
-	transition: background-color 0.3s, border-color 0.3s;
 	position: relative;
 	padding: 2rem;
-	border: 2px solid #404040;
-
-	&:hover {
+	@media only screen and (max-width: 768px) {
 		background-color: #1d1d1d;
-		border-color: transparent;
-		.card__borders {
-			transform: scale(1);
-			opacity: 1;
-			visibility: visible;
-		}
-		.card__image-container_gradient {
-			opacity: 0.8;
-		}
-		.card__plus {
-			transform: scale(1);
+	}
+	@media only screen and (min-width: 768px) {
+		transition: background-color 0.3s, border-color 0.3s;
+		border: 2px solid #404040;
+		&:hover {
+			background-color: #1d1d1d;
+			border-color: transparent;
+			.card__borders {
+				transform: scale(1);
+				opacity: 1;
+				visibility: visible;
+			}
+			.card__image-container_gradient {
+				opacity: 0.8;
+			}
+			.card__plus {
+				transform: scale(1);
+			}
 		}
 	}
+
 	&__title {
 		font-size: 1.6rem;
 		font-weight: 500;
@@ -76,15 +81,20 @@ const props = defineProps({
 		color: rgba(255, 255, 255, 0.5);
 	}
 	&__borders {
-		opacity: 0;
-		visibility: hidden;
-		transform: scale(1.1);
-		transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
+		@media only screen and (min-width: 768px) {
+			opacity: 0;
+			visibility: hidden;
+			transform: scale(1.1);
+			transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
+		}
 	}
 	&__content {
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
+		@media only screen and (max-width: 768px) {
+			gap: 16px;
+		}
 		&-top {
 			line-height: 0;
 			display: flex;

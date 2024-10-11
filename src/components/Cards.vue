@@ -19,5 +19,8 @@ const props = defineProps({
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 	gap: 20px;
+	@media only screen and (max-width: 768px) {
+		gap: 10px;
+	}
 }
 </style>

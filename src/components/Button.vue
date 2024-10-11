@@ -25,7 +25,7 @@ const props = defineProps({
 	justify-content: center;
 	align-items: center;
 	gap: 8px;
-	padding: 0.8rem 1.2rem;
+	padding: max(0.8rem, 14px) max(1.2rem, 16px);
 	background: linear-gradient(
 		var(--gradient-angle),
 		#f0dfad -59.3%,
@@ -33,26 +33,14 @@ const props = defineProps({
 		#e9bb58 47.48%,
 		#ecda59 98.81%
 	);
+	color: var(--black);
 	transition: --gradient-angle 0.6s ease-in-out;
-
 	&:hover {
 		--gradient-angle: -86.75deg;
 	}
-
-	&:active {
-		transform: scale(0.98); // Slight compression effect on click
-		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); // More subtle shadow when active
-	}
-
 	&__text {
-		font-size: max(1vw, 12px);
+		font-size: max(1vw, 16px);
 		font-weight: 500;
-		color: var(--black);
-		transition: color 0.3s ease;
-
-		.button:hover & {
-			color: #333; // Darken text color slightly on hover
-		}
 	}
 }
 </style>

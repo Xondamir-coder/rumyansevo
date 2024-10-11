@@ -18,10 +18,10 @@ const props = defineProps({
 .slider__button {
 	display: grid;
 	place-content: center;
-	width: 2.8rem;
-	height: 2.8rem;
+	width: 56px;
+	height: 56px;
 	background-color: #ffffff14;
-	backdrop-filter: blur(12px);
+	backdrop-filter: blur(3px);
 	position: relative;
 	transition: background-color 0.3s, opacity 0.3s;
 	&.swiper-button-disabled {
@@ -32,10 +32,6 @@ const props = defineProps({
 	}
 	&--right &-icon {
 		transform: rotate(180deg);
-	}
-	svg {
-		width: 1.2rem;
-		height: 1.2rem;
 	}
 }
 </style>
