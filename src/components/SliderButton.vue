@@ -20,11 +20,15 @@ const props = defineProps({
 	place-content: center;
 	width: 2.8rem;
 	height: 2.8rem;
-	background: #ffffff14;
-	backdrop-filter: blur(24px);
+	background-color: #ffffff14;
+	backdrop-filter: blur(12px);
 	position: relative;
-	&:hover &-borders {
-		--border-color: var(--yellow);
+	transition: background-color 0.3s, opacity 0.3s;
+	&.swiper-button-disabled {
+		opacity: 0.4;
+	}
+	&:hover:not(.swiper-button-disabled) {
+		background-color: #656565;
 	}
 	&--right &-icon {
 		transform: rotate(180deg);
@@ -32,16 +36,6 @@ const props = defineProps({
 	svg {
 		width: 1.2rem;
 		height: 1.2rem;
-	}
-	&-icon > * {
-		transition: color 0.3s, transform 0.3s;
-	}
-	&:hover &-icon > * {
-		color: var(--yellow);
-	}
-	&--right:hover &-icon > *,
-	&:hover &-icon > * {
-		transform: translateX(-3px);
 	}
 }
 </style>

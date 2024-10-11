@@ -36,21 +36,15 @@
 			</p>
 		</div>
 		<div class="footer__bottom">
-			<img
-				class="footer__bullet footer__bullet--1"
-				src="@/assets/images/bullet-1.webp"
-				alt="bullet 1" />
 			<h1 class="footer__title">РУМЯНЦЕВО</h1>
-			<img
-				class="footer__bullet footer__bullet--2"
-				src="@/assets/images/bullet-2.webp"
-				alt="bullet 2" />
+			<ParallaxImages is-bottom />
 		</div>
 	</footer>
 </template>
 
 <script setup>
 import Button from './Button.vue';
+import ParallaxImages from './ParallaxImages.vue';
 
 const routingLinks = [
 	{
@@ -118,6 +112,7 @@ const routingLinks = [
 	&__list {
 		display: flex;
 		flex-direction: column;
+		gap: 6px;
 	}
 	&__time {
 		color: #ffffff80;
@@ -163,24 +158,6 @@ const routingLinks = [
 		text-align: center;
 		font-size: 14vw;
 		z-index: 2;
-	}
-	&__bullet {
-		position: absolute;
-		object-fit: cover;
-		&--1 {
-			width: 24rem;
-			height: 21rem;
-			left: -12%;
-			top: 10%;
-		}
-		&--2 {
-			z-index: 2;
-			top: -17%;
-			right: -17%;
-			width: 24rem;
-			height: 24rem;
-			filter: blur(5px);
-		}
 	}
 	&__bottom {
 		position: relative;

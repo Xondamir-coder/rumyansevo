@@ -1,34 +1,36 @@
 <template>
 	<section class="hero">
 		<h1 class="hero__text">
-			<span class="gradient"> Уникальный спортивный комплекс, </span> единственный в России
+			<span class="gradient">Уникальный спортивный комплекс,</span> единственный в России
 			подобного формата
 		</h1>
+
+		<!-- Down arrows with subtle animation -->
 		<div class="hero__arrows">
-			<ArrowDown />
-			<ArrowDown />
-			<ArrowDown />
+			<ArrowDown class="arrow arrow-1" />
+			<ArrowDown class="arrow arrow-2" />
+			<ArrowDown class="arrow arrow-3" />
 		</div>
-		<img
-			width="576"
-			height="529"
-			src="@/assets/images/bullet-1.webp"
-			alt="bullet"
-			class="hero__bullet hero__bullet--1" />
-		<img
-			width="1087"
-			height="1087"
-			src="@/assets/images/bullet-2.webp"
-			alt="bullet"
-			class="hero__bullet hero__bullet--2" />
+
+		<ParallaxImages />
 	</section>
 </template>
 
 <script setup>
 import ArrowDown from './Icons/ArrowDown.vue';
+import ParallaxImages from './ParallaxImages.vue';
 </script>
 
 <style lang="scss" scoped>
+@keyframes arrowBounce {
+	0%,
+	100% {
+		transform: translateY(0); /* Arrow in its original position */
+	}
+	50% {
+		transform: translateY(15px); /* Arrow moves down */
+	}
+}
 .hero {
 	margin-top: 2rem;
 	padding: 0 0.5rem;
@@ -49,41 +51,13 @@ import ArrowDown from './Icons/ArrowDown.vue';
 			@each $index in 1, 2, 3 {
 				&:nth-child(#{$index}) {
 					opacity: 0.33333 * $index;
+					animation: arrowBounce 2s ease-in-out infinite;
+					animation-delay: #{0.2 * ($index - 1)}s; // Staggered animation delay
 				}
 			}
 		}
 	}
-	&__bullet {
-		position: absolute;
-		object-fit: cover;
-		&--1 {
-			width: min(30vw, 484.04px);
-			height: min(30vw, 417.61px);
-			top: 40%;
-			left: 0;
-			z-index: -1;
-			@media only screen and (max-width: 768px) {
-				top: 20%;
-				left: -85px;
-				transform: rotate(-20deg);
-				width: 214px;
-				height: 184px;
-				z-index: 10;
-			}
-		}
-		&--2 {
-			top: 63%;
-			right: -18%;
-			width: min(50vw, 500px);
-			height: min(50vw, 500px);
-			filter: blur(5px);
-			transform: rotate(5deg);
-			z-index: 10;
-			@media only screen and (max-width: 768px) {
-				z-index: -1;
-			}
-		}
-	}
+
 	&__text {
 		align-self: center;
 		max-width: 14ch;

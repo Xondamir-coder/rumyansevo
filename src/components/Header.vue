@@ -84,10 +84,9 @@ const emits = defineEmits(['openMenu']);
 	&__tel {
 		font-size: 0.85rem;
 		background-color: #40404069;
-		transition: box-shadow 0.3s, transform 0.3s;
+		transition: background-color 0.3s;
 		&:hover {
-			box-shadow: 0 0 12px #ffffff77;
-			transform: translateY(-5px);
+			background-color: #b7b7b769;
 		}
 	}
 	&__buttons {

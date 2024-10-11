@@ -15,11 +15,13 @@
 					required />
 				<input
 					required
+					:class="{ membership__input_invalid: !isTelValid }"
 					class="membership__input"
-					type="tel "
+					type="tel"
 					placeholder="+7 (___) ___-__-__"
-					@focus="checkInput"
-					v-model="tel" />
+					v-mask="'+7 (###) ###-##-##'"
+					v-model="tel"
+					@input="clearTelValid" />
 				<div class="membership__cta">
 					<Button text="Забронировать" type="submit" class="membership__btn" />
 					<p class="membership__data">
@@ -62,14 +64,18 @@ import Time from '../Icons/Time.vue';
 
 const name = ref('');
 const tel = ref();
+const isTelValid = ref(true);
 
-const checkInput = () => {
-	if (!tel.value) {
-		tel.value = '+7 ';
-	}
+const clearTelValid = () => {
+	isTelValid.value = true;
+};
+const validatePhone = () => {
+	const phonePattern = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
+	isTelValid.value = phonePattern.test(tel.value);
 };
 const submitForm = () => {
-	console.log(name.value, tel.value);
+	validatePhone();
+	if (!isTelValid.value) return;
 };
 </script>
 
@@ -85,6 +91,7 @@ const submitForm = () => {
 			'form'
 			'cards';
 	}
+
 	&__input {
 		font-size: 1rem;
 		letter-spacing: -0.05em;
@@ -94,19 +101,17 @@ const submitForm = () => {
 		border: 1px solid transparent;
 		transition: border-color 0.3s;
 
-		&:focus {
+		&_invalid,
+		&:user-invalid {
+			border-color: #fe303080 !important;
+			color: #fe303080 !important;
+		}
+		&:focus,
+		&:hover {
 			border-color: #ffffff80;
 		}
 	}
-	&__btn {
-		background: linear-gradient(
-			94.59deg,
-			#f0dfad 0%,
-			#e8b55d 33.71%,
-			#e9bb58 66.75%,
-			#ecda59 98.84%
-		);
-	}
+
 	&__data {
 		font-size: 14px;
 		color: #ffffffbf;
@@ -129,17 +134,34 @@ const submitForm = () => {
 		color: #ffffff80;
 	}
 	&__cta {
+		position: relative;
 		margin-top: 1rem;
 		display: grid;
 		align-items: center;
 		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 		column-gap: 2rem;
 		row-gap: 1rem;
+		&::after {
+			content: 'Сообщение об ошибке';
+			color: #fe3030;
+			position: absolute;
+			top: -22px;
+			left: 0;
+			font-size: 0.8rem;
+			transform: translateX(-10px);
+			opacity: 0;
+			transition: opacity 0.3s, transform 0.3s;
+		}
 	}
 	&__form {
 		display: flex;
 		flex-direction: column;
 		gap: 12px;
+
+		&:has(.membership__input_invalid) .membership__cta::after {
+			opacity: 1;
+			transform: translateX(0);
+		}
 	}
 	&__content {
 		display: flex;

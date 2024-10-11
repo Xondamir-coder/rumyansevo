@@ -22,8 +22,7 @@
 				grab-cursor="true"
 				:navigation="{
 					prevEl: '#trainer-left',
-					nextEl: '#trainer-right',
-					disabledClass: 'disabled'
+					nextEl: '#trainer-right'
 				}"
 				@swiperactiveindexchange="onSlideChange">
 				<swiper-slide v-for="(trainer, i) in trainers" class="trainer__slide">
@@ -111,17 +110,11 @@ const onSlideChange = () => {
 
 <style lang="scss" scoped>
 .trainer {
-	margin-bottom: 10rem;
-	margin-top: 10rem;
+	margin-bottom: 10vmax;
+	margin-top: 10vmax;
 	display: flex;
 	flex-direction: column;
 	gap: 5vw;
-	&__button.disabled {
-		opacity: 0.4;
-	}
-	&__button {
-		transition: opacity 0.3s;
-	}
 	&__small {
 		&-desc {
 			color: var(--grey);

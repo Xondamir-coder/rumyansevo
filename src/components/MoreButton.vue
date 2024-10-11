@@ -20,14 +20,7 @@ import More from './Icons/More.vue';
 	transition: border-color 0.3s, color 0.3s;
 	border: 1px solid var(--grey);
 	&:hover {
-		border-color: var(--yellow);
-		color: var(--yellow);
-	}
-	&:hover &__icon {
-		transform: translate(5px, -5px);
-	}
-	&__icon {
-		transition: transform 0.3s;
+		border-color: #fff;
 	}
 }
 </style>

@@ -87,7 +87,7 @@ onMounted(() => {
 .carousel {
 	display: flex;
 	flex-direction: column;
-	margin-top: 7rem;
+	margin-top: 7vmax;
 
 	&__image {
 		width: 100%;

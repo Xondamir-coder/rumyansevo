@@ -192,7 +192,7 @@ const getTypeName = type => {
 		border-radius: 10px;
 		&-title {
 			font-weight: 500;
-			font-size: 1.6rem;
+			font-size: 1.9rem;
 			transition: font-size 0.3s;
 			max-width: 10ch;
 		}
@@ -221,7 +221,7 @@ const getTypeName = type => {
 		}
 		&-desc {
 			max-width: 25ch;
-			font-size: 0.8rem;
+			font-size: 1rem;
 			filter: blur(10px);
 			opacity: 0;
 			transform: translateY(100%);
