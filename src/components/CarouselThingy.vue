@@ -1,5 +1,20 @@
 <template>
-	<svg v-if="!isBig" viewBox="0 0 52 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<svg
+		v-if="!isBig && isRight"
+		viewBox="0 0 52 41"
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg">
+		<line x1="4.37114e-08" y1="19.5" x2="52" y2="19.5" stroke="#404040" />
+		<line x1="20.5" y1="2.18555e-08" x2="20.5" y2="41" stroke="#404040" />
+		<line x1="30.5" y1="10" x2="30.5" y2="31" stroke="#404040" />
+		<line x1="40.5" y1="10" x2="40.5" y2="31" stroke="#404040" />
+		<line x1="50.5" y1="10" x2="50.5" y2="31" stroke="#404040" />
+	</svg>
+	<svg
+		v-if="!isBig && !isRight"
+		viewBox="0 0 52 41"
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg">
 		<line
 			y1="-0.5"
 			x2="52"
@@ -58,4 +73,8 @@
 
 <script setup>
 const isBig = window.innerWidth > 768;
+
+const props = defineProps({
+	isRight: Boolean
+});
 </script>

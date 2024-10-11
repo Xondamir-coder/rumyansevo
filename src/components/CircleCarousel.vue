@@ -77,7 +77,7 @@
 					<p class="carousel__text">{{ item.text }}</p>
 				</div>
 			</div>
-			<CarouselThingy class="carousel__thingy" />
+			<CarouselThingy class="carousel__thingy" is-right />
 		</div>
 		<div class="carousel__bottom"></div>
 	</section>
@@ -194,7 +194,7 @@ onMounted(() => {
 		background-color: var(--grey);
 	}
 	&__text {
-		font-size: clamp(20px, 5vw, 36px);
+		font-size: clamp(16px, 4vw, 36px);
 		font-weight: 500;
 		text-align: center;
 		max-width: 10ch;
@@ -203,7 +203,7 @@ onMounted(() => {
 	}
 	&__title {
 		background-image: var(--text-gradient);
-		font-size: clamp(32px, 7vw, 86px);
+		font-size: clamp(26px, 7vw, 86px);
 		font-weight: 400;
 		letter-spacing: -0.06em;
 		color: transparent;
