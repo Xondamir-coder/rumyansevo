@@ -1,7 +1,7 @@
 <template>
 	<button class="slider__button" :class="{ 'slider__button--right': isRight }">
 		<ArrowLeft class="slider__button-icon" />
-		<Borders />
+		<Borders class="slider__button-borders" />
 	</button>
 </template>
 
@@ -23,6 +23,9 @@ const props = defineProps({
 	background: #ffffff14;
 	backdrop-filter: blur(24px);
 	position: relative;
+	&:hover &-borders {
+		--border-color: var(--yellow);
+	}
 	&--right &-icon {
 		transform: rotate(180deg);
 	}

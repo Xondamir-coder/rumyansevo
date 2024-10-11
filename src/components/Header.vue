@@ -92,7 +92,7 @@ const emits = defineEmits(['openMenu']);
 	}
 	&__buttons {
 		display: flex;
-		align-items: center;
+		align-items: stretch;
 		gap: 14px;
 		font-size: 0.8rem;
 		& > * {
@@ -102,7 +102,7 @@ const emits = defineEmits(['openMenu']);
 	&__right {
 		display: flex;
 		align-items: center;
-		gap: 9.25rem;
+		gap: 5vw;
 		@media only screen and (max-width: 1200px) {
 			gap: 4vw;
 		}

@@ -9,6 +9,7 @@
 	--font-base: 'TT Firs Neue', sans-serif;
 	--black: #161616;
 	--grey: #404040;
+	--light-grey: #1d1d1d;
 	--yellow: #e7d387;
 	--text-gradient: linear-gradient(
 		94.59deg,
@@ -40,7 +41,7 @@ html {
 	/* h6: 0.67em (or 10.72px) */
 	/* p: 1em (or 16px) */
 	scroll-behavior: smooth;
-	font-size: clamp(0.9rem, 1vw + 0.3rem, 1.5rem);
+	font-size: clamp(0.9rem, 1vw + 0.1rem, 1.5rem);
 }
 body {
 	font-family: var(--font-base);

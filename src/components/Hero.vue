@@ -33,6 +33,8 @@ import ArrowDown from './Icons/ArrowDown.vue';
 	margin-top: 2rem;
 	padding: 0 0.5rem;
 	position: relative;
+	display: flex;
+	flex-direction: column;
 	@media only screen and (max-width: 768px) {
 		margin-top: 4rem;
 		padding: 0;
@@ -83,9 +85,11 @@ import ArrowDown from './Icons/ArrowDown.vue';
 		}
 	}
 	&__text {
+		align-self: center;
+		max-width: 14ch;
 		font-weight: 400;
 		text-align: center;
-		font-size: clamp(56px, 9vw, 150px);
+		font-size: clamp(56px, 7vw, 150px);
 		line-height: 0.9;
 	}
 }

@@ -62,7 +62,7 @@ const content = [
 		}
 	}
 	&__title {
-		font-size: clamp(32px, 6vw, 64px);
+		font-size: clamp(32px, 3.4vw, 64px);
 		font-weight: 500;
 	}
 	&__top {

@@ -6,6 +6,7 @@
 
 <style scoped lang="scss">
 .borders {
+	--border-color: #fff;
 	position: absolute;
 	inset: 0;
 	display: grid;
@@ -18,23 +19,23 @@
 	height: 25%;
 	transition: border-color 0.3s;
 	&:first-of-type {
-		border-left: 1px solid #fff;
-		border-top: 1px solid #fff;
+		border-left: 1px solid var(--border-color);
+		border-top: 1px solid var(--border-color);
 	}
 	&:nth-of-type(2) {
 		justify-self: end;
-		border-right: 1px solid #fff;
-		border-top: 1px solid #fff;
+		border-right: 1px solid var(--border-color);
+		border-top: 1px solid var(--border-color);
 	}
 	&:nth-of-type(3) {
 		align-self: end;
-		border-left: 1px solid #fff;
-		border-bottom: 1px solid #fff;
+		border-left: 1px solid var(--border-color);
+		border-bottom: 1px solid var(--border-color);
 	}
 	&:last-of-type {
 		place-self: end;
-		border-right: 1px solid #fff;
-		border-bottom: 1px solid #fff;
+		border-right: 1px solid var(--border-color);
+		border-bottom: 1px solid var(--border-color);
 	}
 }
 </style>

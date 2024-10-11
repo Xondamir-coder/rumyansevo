@@ -42,7 +42,7 @@ const props = defineProps({
 		gap: 32px;
 	}
 	&__text {
-		font-size: clamp(30px, 4vw, 70px);
+		font-size: clamp(30px, 3vw, 70px);
 		font-weight: 500;
 		max-width: 17ch;
 		line-height: 1;

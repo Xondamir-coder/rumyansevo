@@ -16,6 +16,7 @@ const props = defineProps({
 <style lang="scss" scoped>
 .button {
 	display: flex;
+	justify-content: center;
 	align-items: center;
 	gap: 8px;
 	padding: 0.8rem 1.2rem;
@@ -26,7 +27,7 @@ const props = defineProps({
 		transform: translateY(-5px);
 	}
 	&__text {
-		font-size: 0.8rem;
+		font-size: max(1vw, 12px);
 		font-weight: 500;
 		color: var(--black);
 	}
