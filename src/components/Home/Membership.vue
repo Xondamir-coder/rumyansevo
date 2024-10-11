@@ -121,7 +121,7 @@ const submitForm = () => {
 		}
 	}
 	&__title {
-		font-size: clamp(32px, 3.2vw, 64px);
+		font-size: clamp(32px, 2.8vw + 0.1rem, 64px);
 		font-weight: 500;
 	}
 	&__text {

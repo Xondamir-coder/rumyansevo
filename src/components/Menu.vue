@@ -92,7 +92,7 @@ const emits = defineEmits(['closeMenu']);
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	padding: 3vh 4.5rem;
+	padding: 3vh 5.5rem;
 	transition: transform $duration, opacity $duration, visibility $duration;
 	z-index: 100;
 	&.hidden {
@@ -117,7 +117,7 @@ const emits = defineEmits(['closeMenu']);
 		gap: 3vh;
 	}
 	&__link {
-		font-size: 2.5rem;
+		font-size: 3.5rem;
 		line-height: 1;
 		transition: color 0.3s;
 		position: relative;
