@@ -10,11 +10,13 @@
 		<Arsenal />
 		<Trainer />
 		<Membership />
+		<Footer />
 	</main>
 </template>
 
 <script setup>
 import CircleCarousel from '@/components/CircleCarousel.vue';
+import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue';
 import Hero from '@/components/Hero.vue';
 import About from '@/components/Home/About.vue';
