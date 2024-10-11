@@ -104,6 +104,7 @@ const content = [
 	{ label: 'Водоем', text: 'С активными мишенями' },
 	{ label: 28, text: 'Стрелковых вышек' }
 ];
+
 onMounted(() => {
 	const totalPath = circleBorderRef.value.getTotalLength();
 	const oneSlideAnimationDuration = 2 * 1000; // 2 seconds in milliseconds
@@ -122,7 +123,6 @@ onMounted(() => {
 		}
 	);
 	setInterval(() => {
-		console.log('hello');
 		curSlide.value = (curSlide.value + 1) % content.length;
 	}, oneSlideAnimationDuration);
 });
